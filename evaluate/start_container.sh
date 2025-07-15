@@ -26,7 +26,8 @@ fi
 
 # Start the Docker container
 echo "Starting container ${container_name} with memory=${memory}, cpuset_cpus=${cpuset_cpus}..."
-docker run -dit --name "${container_name}" --memory "${memory}" --memory-swap "${memory}" --cpuset-cpus="${cpuset_cpus}" "${image_base}" /bin/bash
+# docker run -dit --name "${container_name}" --memory "${memory}" --memory-swap "${memory}" --cpuset-cpus="${cpuset_cpus}" "${image_base}" /bin/bash
+docker run -dit --name "${container_name}" --memory "${memory}" --memory-swap "${memory}" --cpus="${cpuset_cpus}" "${image_base}" /bin/bash
 
 # Check if the container started successfully
 if [[ $? -eq 0 ]]; then

@@ -18,7 +18,8 @@ repo_names=(
 
 # Memory and CPU settings
 memory="16g"
-cpuset_cpus="0-16"
+# cpuset_cpus="0-16"
+cpuset_cpus="128"
 
 # Loop through each repository name to start a container
 for repo in "${repo_names[@]}"; do
